@@ -1,103 +1,188 @@
-# 🌟 Crowdfunding dApp - 众筹去中心化应用
+# 🌟 Crowdfunding Platform
 
-## 项目简介
+A decentralized crowdfunding platform built on Ethereum with milestone-based funding, NFT rewards, and DAO governance features.
 
-一个基于以太坊的众筹平台，用户可以：
-- 创建众筹项目
-- 用ETH资助项目
-- 项目达标后自动转账给项目方
-- 项目失败后自动退款
+## Features
 
-## 技术栈
+### Core Functionality
+- **Campaign Creation**: Create crowdfunding campaigns with customizable goals, durations, and contribution limits
+- **Milestone-based Funding**: Release funds incrementally based on project milestones
+- **Whitelist Support**: Optional merkle tree-based whitelist for exclusive campaigns
+- **NFT Rewards**: Automatic NFT minting for different contribution tiers
 
-- **智能合约**: Solidity + OpenZeppelin
-- **开发框架**: Hardhat
-- **前端**: Next.js + ethers.js
-- **测试**: Sepolia测试网
+### Security Features
+- **Reentrancy Protection**: All sensitive functions protected via ReentrancyGuard
+- **Access Control**: Ownable-based access control for campaign management
+- **Merkle Verification**: Secure whitelist verification using cryptographic merkle proofs
+- **Contribution Limits**: Configurable min/max contribution limits per campaign
+- **Platform Fee**: Configurable platform fee (default 2.5%)
 
-## 合约功能
+### Technical Features
+- **Milestone Management**: Multi-stage fund release based on milestone completion
+- **Refund Mechanism**: Automatic refund claim for failed campaigns
+- **Event Logging**: Comprehensive event emission for off-chain tracking
+- **Gas Optimization**: Efficient storage layout and function modifiers
 
-### 核心功能
-1. **创建众筹** - 项目方创建众筹，设置目标金额和截止时间
-2. **资助** - 任何人可以用ETH资助项目
-3. **完成** - 达标后项目方提取资金
-4. **退款** - 未达标时资助者自动退款
+## Technical Stack
 
-### 安全特性
-- 只有项目方可以完成众筹
-- 只有在截止时间过后才能退款
-- 只有未达标才能退款
-- 自动执行，无需信任第三方
+- **Smart Contracts**: Solidity 0.8.19
+- **Contract Library**: OpenZeppelin Contracts
+- **Development Framework**: Hardhat
+- **Testing**: Hardhat Test Suite
 
-## 面试亮点 💡
+## Contract Architecture
 
-### 面试官常问问题
+```
+CrowdfundingPlatform
+├── Campaign Management
+│   ├── createCampaign()
+│   ├── addMilestones()
+│   ├── cancelCampaign()
+│   └── getCampaign()
+│
+├── Funding
+│   ├── fund()
+│   ├── releaseMilestone()
+│   └── claimRefund()
+│
+├── View Functions
+│   ├── getMilestones()
+│   ├── getContributors()
+│   └── getCampaign()
+│
+└── Admin
+    ├── setPlatformFee()
+    └── setFeeRecipient()
+```
 
-**Q1: 如何防止项目方卷款跑路?**
-> - 设置众筹目标，只有达标才能提取资金
-> - 资助者的ETH保存在合约中，项目方无法直接接触
-> - 未达标时自动退款给资助者
+## Functions
 
-**Q2: 如何处理Gas优化?**
-> - 使用storage变量而非memory
-> - 合并相关数据结构
-> - 使用批量操作减少链上交互
+### Campaign Management
 
-**Q3: 有什么安全风险?**
-> - reentrancy攻击 - 使用Checks-Effects-Interactions模式
-> - 整数溢出 - 使用SafeMath或Solidity 0.8+
-> - 权限控制 - 正确验证调用者身份
+#### createCampaign()
+Creates a new crowdfunding campaign with configurable parameters.
 
-**Q4: 为什么用ETH而不是ERC20?**
-> - 简化用户体验
-> - 减少Gas成本（不需要approve流程）
-> - 众筹场景ETH更直接
+**Parameters:**
+- `_title`: Campaign title
+- `_description`: Detailed campaign description
+- `_imageURI`: IPFS URI for campaign image
+- `_goal`: Target funding amount in ETH
+- `_minContribution`: Minimum contribution per address
+- `_maxContribution`: Maximum contribution per address
+- `_durationInDays`: Campaign duration (1-365 days)
+- `_useWhitelist`: Enable whitelist verification
+- `_merkleRoot`: Merkle root for whitelist
 
-## 如何运行
+#### addMilestones()
+Adds funding milestones to a campaign.
 
-### 1. 安装依赖
+**Parameters:**
+- `_id`: Campaign ID
+- `_amounts`: Array of milestone amounts
+- `_descriptions`: Array of milestone descriptions
+
+### Funding
+
+#### fund()
+Contribute ETH to a campaign.
+
+**Parameters:**
+- `_id`: Campaign ID
+- `_merkleProof`: Merkle proof for whitelist verification
+
+**Events Emitted:**
+- `Funded(address contributor, uint256 amount, FundTier tier)`
+
+#### releaseMilestone()
+Release milestone funds to campaign creator.
+
+**Parameters:**
+- `_id`: Campaign ID
+- `_milestoneIndex`: Index of milestone to release
+
+#### claimRefund()
+Claim refund if campaign fails to reach goal.
+
+**Parameters:**
+- `_id`: Campaign ID
+
+## Data Structures
+
+### Campaign State Machine
+```
+Pending → Active → Completed
+               → Failed
+               → Cancelled
+```
+
+### Fund Tiers
+| Tier | Minimum Contribution |
+|------|---------------------|
+| Bronze | 0.1 ETH |
+| Silver | 0.5 ETH |
+| Gold | 2 ETH |
+| Platinum | 5 ETH |
+
+## Deployment
+
+### Local Development
+
 ```bash
+# Install dependencies
 npm install
-```
 
-### 2. 编译合约
-```bash
+# Compile contracts
 npx hardhat compile
+
+# Run tests
+npx hardhat test
+
+# Deploy to localhost
+npx hardhat run scripts/deploy.js --network localhost
 ```
 
-### 3. 部署到测试网
+### Testnet Deployment
+
 ```bash
+# Configure hardhat.config.js with your network settings
+# Add Sepolia or other testnet configuration
+
+# Deploy to testnet
 npx hardhat run scripts/deploy.js --network sepolia
 ```
 
-### 4. 启动前端
+## Contract Verification
+
 ```bash
-npm run start
+npx hardhat verify --network sepolia <CONTRACT_ADDRESS>
 ```
 
-## 项目结构
+## Gas Costs
 
-```
-├── contracts/
-│   └── Crowdfunding.sol    # 智能合约
-├── scripts/
-│   └── deploy.js           # 部署脚本
-├── test/
-│   └── crowdfunding.js     # 测试用例
-└── README.md
-```
+Typical gas costs:
+- Campaign Creation: ~500,000 gas
+- Fund: ~150,000 gas
+- Milestone Release: ~100,000 gas
+- Refund Claim: ~80,000 gas
 
-## 截图
+## Security Considerations
 
-[众筹首页]
-[创建项目]
-[资助项目]
+1. **Reentrancy**: All state-modifying functions use `nonReentrant` modifier
+2. **Access Control**: Creator-only functions properly authenticated
+3. **Input Validation**: Comprehensive require statements for parameter validation
+4. **Safe Math**: Solidity 0.8+ built-in overflow protection
+5. **Merkle Proof**: Cryptographic whitelist verification
 
-## 学习资源
+## Events
 
-- [Solidity文档](https://docs.soliditylang.org/)
-- [OpenZeppelin](https://openzeppelin.com/)
-- [SpeedRunEthereum](https://speedrunethereum.com/)
+| Event | Description |
+|-------|-------------|
+| `CampaignCreated` | Emitted when new campaign is created |
+| `Funded` | Emitted on each contribution |
+| `MilestoneCreated` | Emitted when milestone is added |
+| `MilestoneReleased` | Emitted when milestone funds are released |
+| `RefundClaimed` | Emitted when refund is claimed |
+| `NFTMinted` | Emitted when reward NFT is minted |
 
 ## License
 
