@@ -1,0 +1,1030 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "@openzeppelin/contracts/access/Ownable.sol:Ownable": {
+        "src": "@openzeppelin/contracts/access/Ownable.sol:20",
+        "inherit": [
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/security/ReentrancyGuard.sol:ReentrancyGuard": {
+        "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:22",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ReentrancyGuard",
+            "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:39"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_status",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "ReentrancyGuard",
+              "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:37"
+            }
+          ],
+          "types": {
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC20/ERC20.sol:ERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:38",
+        "version": {
+          "withMetadata": "f4b0bd1164d2d8594926380f8bda22eb42d1c66196adaefd3a856a92a80aedc7",
+          "withoutMetadata": "5c880a403831e77bcb50b7145ddf2de0da091829f45515ecc5363d5eace185ca",
+          "linkedWithoutMetadata": "5c880a403831e77bcb50b7145ddf2de0da091829f45515ecc5363d5eace185ca"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:IERC20Metadata",
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:54"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:39"
+            },
+            {
+              "label": "_allowances",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:41"
+            },
+            {
+              "label": "_totalSupply",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:43"
+            },
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:45"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "ERC20",
+              "src": "@openzeppelin/contracts/token/ERC20/ERC20.sol:46"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:IERC20Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol:13",
+        "inherit": [
+          "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "decimals()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC721/ERC721.sol:ERC721": {
+        "src": "@openzeppelin/contracts/token/ERC721/ERC721.sol:19",
+        "version": {
+          "withMetadata": "a23af61af9785d8ef4e9afad3f717dee3456cceeb92ad45a62637c9a31dc9a31",
+          "withoutMetadata": "5279953dc8c6f06862450123f73f925ff2bffc2c0dffcc6481876ef42ad805b6",
+          "linkedWithoutMetadata": "5279953dc8c6f06862450123f73f925ff2bffc2c0dffcc6481876ef42ad805b6"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol:IERC721Metadata",
+          "@openzeppelin/contracts/token/ERC721/IERC721.sol:IERC721",
+          "@openzeppelin/contracts/utils/introspection/ERC165.sol:ERC165",
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [
+          "@openzeppelin/contracts/utils/Address.sol:Address",
+          "@openzeppelin/contracts/utils/Strings.sol:Strings"
+        ],
+        "methods": [
+          "(string,string)",
+          "supportsInterface(bytes4)",
+          "balanceOf(address)",
+          "ownerOf(uint256)",
+          "name()",
+          "symbol()",
+          "tokenURI(uint256)",
+          "approve(address,uint256)",
+          "getApproved(uint256)",
+          "setApprovalForAll(address,bool)",
+          "isApprovedForAll(address,address)",
+          "transferFrom(address,address,uint256)",
+          "safeTransferFrom(address,address,uint256)",
+          "safeTransferFrom(address,address,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC721",
+            "src": "@openzeppelin/contracts/token/ERC721/ERC721.sol:44"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_name",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "ERC721",
+              "src": "@openzeppelin/contracts/token/ERC721/ERC721.sol:24"
+            },
+            {
+              "label": "_symbol",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_string_storage",
+              "contract": "ERC721",
+              "src": "@openzeppelin/contracts/token/ERC721/ERC721.sol:27"
+            },
+            {
+              "label": "_owners",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_uint256,t_address)",
+              "contract": "ERC721",
+              "src": "@openzeppelin/contracts/token/ERC721/ERC721.sol:30"
+            },
+            {
+              "label": "_balances",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "ERC721",
+              "src": "@openzeppelin/contracts/token/ERC721/ERC721.sol:33"
+            },
+            {
+              "label": "_tokenApprovals",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint256,t_address)",
+              "contract": "ERC721",
+              "src": "@openzeppelin/contracts/token/ERC721/ERC721.sol:36"
+            },
+            {
+              "label": "_operatorApprovals",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_bool))",
+              "contract": "ERC721",
+              "src": "@openzeppelin/contracts/token/ERC721/ERC721.sol:39"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_bool))": {
+              "label": "mapping(address => mapping(address => bool))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_address)": {
+              "label": "mapping(uint256 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC721/IERC721.sol:IERC721": {
+        "src": "@openzeppelin/contracts/token/ERC721/IERC721.sol:11",
+        "inherit": [
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165"
+        ],
+        "libraries": [],
+        "methods": [
+          "balanceOf(address)",
+          "ownerOf(uint256)",
+          "safeTransferFrom(address,address,uint256,bytes)",
+          "safeTransferFrom(address,address,uint256)",
+          "transferFrom(address,address,uint256)",
+          "approve(address,uint256)",
+          "setApprovalForAll(address,bool)",
+          "getApproved(uint256)",
+          "isApprovedForAll(address,address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol:IERC721Receiver": {
+        "src": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol:11",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "onERC721Received(address,address,uint256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol:IERC721Metadata": {
+        "src": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol:12",
+        "inherit": [
+          "@openzeppelin/contracts/token/ERC721/IERC721.sol:IERC721",
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165"
+        ],
+        "libraries": [],
+        "methods": [
+          "name()",
+          "symbol()",
+          "tokenURI(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/Address.sol:Address": {
+        "src": "@openzeppelin/contracts/utils/Address.sol:9",
+        "version": {
+          "withMetadata": "28f20ee775c85e652c25917bdc3080ed07862688a4fc14befdeb4699945d5e9c",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/Context.sol:Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/Strings.sol:Strings": {
+        "src": "@openzeppelin/contracts/utils/Strings.sol:12",
+        "version": {
+          "withMetadata": "b9590b6de55eca1a159650f8eb8aa3e24ef6b378aa222744141fc34d489b8c4e",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/math/Math.sol:Math",
+          "@openzeppelin/contracts/utils/math/SignedMath.sol:SignedMath"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol:MerkleProof": {
+        "src": "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol:20",
+        "version": {
+          "withMetadata": "b4317e82cedaf8cd3a63a723a51159526bda33f163c215e1ad008d3f16885b68",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/introspection/ERC165.sol:ERC165": {
+        "src": "@openzeppelin/contracts/utils/introspection/ERC165.sol:22",
+        "inherit": [
+          "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165"
+        ],
+        "libraries": [],
+        "methods": [
+          "supportsInterface(bytes4)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/introspection/IERC165.sol:IERC165": {
+        "src": "@openzeppelin/contracts/utils/introspection/IERC165.sol:15",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "supportsInterface(bytes4)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/math/Math.sol:Math": {
+        "src": "@openzeppelin/contracts/utils/math/Math.sol:9",
+        "version": {
+          "withMetadata": "5b6bda927093ffb2fd854c16199be200105c73bfe0892fb482d8233ba4c084ed",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "@openzeppelin/contracts/utils/math/SignedMath.sol:SignedMath": {
+        "src": "@openzeppelin/contracts/utils/math/SignedMath.sol:9",
+        "version": {
+          "withMetadata": "574bfca8ebfdcb0b5817ac0235a7259db28202a509e40e6da5519cbd8a74c1b1",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      },
+      "contracts/Crowdfunding.sol:CrowdfundingPlatform": {
+        "src": "contracts/Crowdfunding.sol:12",
+        "version": {
+          "withMetadata": "5d5c78889049a6ceead8a930ec7b074eb87171dacacd50db628f962dca05076c",
+          "withoutMetadata": "aa92c73886ff70ae572d42fb6af09148bbb37a3bbd3d808815ac9ba1db950640",
+          "linkedWithoutMetadata": "aa92c73886ff70ae572d42fb6af09148bbb37a3bbd3d808815ac9ba1db950640"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/access/Ownable.sol:Ownable",
+          "@openzeppelin/contracts/utils/Context.sol:Context",
+          "@openzeppelin/contracts/security/ReentrancyGuard.sol:ReentrancyGuard"
+        ],
+        "libraries": [
+          "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol:MerkleProof"
+        ],
+        "methods": [
+          "()",
+          "createCampaign(string,string,string,uint256,uint256,uint256,uint256,bool,bytes32)",
+          "addMilestones(uint256,uint256[],string[])",
+          "fund(uint256,bytes32[])",
+          "releaseMilestone(uint256,uint256)",
+          "claimRefund(uint256)",
+          "cancelCampaign(uint256)",
+          "getCampaign(uint256)",
+          "getMilestones(uint256)",
+          "getContributors(uint256)",
+          "setPlatformFee(uint256)",
+          "setFeeRecipient(address)",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "CrowdfundingPlatform",
+            "src": "contracts/Crowdfunding.sol:131"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "platformFee",
+            "src": "contracts/Crowdfunding.sol:14"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_status",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_uint256",
+              "contract": "ReentrancyGuard",
+              "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:37"
+            },
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            },
+            {
+              "label": "campaignCount",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "CrowdfundingPlatform",
+              "src": "contracts/Crowdfunding.sol:13"
+            },
+            {
+              "label": "platformFee",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_uint256",
+              "contract": "CrowdfundingPlatform",
+              "src": "contracts/Crowdfunding.sol:14"
+            },
+            {
+              "label": "feeRecipient",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_address",
+              "contract": "CrowdfundingPlatform",
+              "src": "contracts/Crowdfunding.sol:15"
+            },
+            {
+              "label": "campaigns",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_uint256,t_struct(Campaign)4146_storage)",
+              "contract": "CrowdfundingPlatform",
+              "src": "contracts/Crowdfunding.sol:64"
+            },
+            {
+              "label": "contributions",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_uint256,t_mapping(t_address,t_struct(Contribution)4153_storage))",
+              "contract": "CrowdfundingPlatform",
+              "src": "contracts/Crowdfunding.sol:65"
+            },
+            {
+              "label": "milestones",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_mapping(t_uint256,t_array(t_struct(Milestone)4162_storage)dyn_storage)",
+              "contract": "CrowdfundingPlatform",
+              "src": "contracts/Crowdfunding.sol:66"
+            },
+            {
+              "label": "rewardNFTs",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_mapping(t_uint256,t_struct(RewardNFT)4184_storage)",
+              "contract": "CrowdfundingPlatform",
+              "src": "contracts/Crowdfunding.sol:67"
+            },
+            {
+              "label": "campaignContributors",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_mapping(t_uint256,t_array(t_address)dyn_storage)",
+              "contract": "CrowdfundingPlatform",
+              "src": "contracts/Crowdfunding.sol:68"
+            },
+            {
+              "label": "creatorCampaigns",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+              "contract": "CrowdfundingPlatform",
+              "src": "contracts/Crowdfunding.sol:69"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(Milestone)4162_storage)dyn_storage": {
+              "label": "struct CrowdfundingPlatform.Milestone[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes32": {
+              "label": "bytes32",
+              "numberOfBytes": "32"
+            },
+            "t_enum(CampaignState)4104": {
+              "label": "enum CrowdfundingPlatform.CampaignState",
+              "members": [
+                "Pending",
+                "Active",
+                "Completed",
+                "Failed",
+                "Cancelled"
+              ],
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_array(t_uint256)dyn_storage)": {
+              "label": "mapping(address => uint256[])",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_struct(Contribution)4153_storage)": {
+              "label": "mapping(address => struct CrowdfundingPlatform.Contribution)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_array(t_address)dyn_storage)": {
+              "label": "mapping(uint256 => address[])",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_array(t_struct(Milestone)4162_storage)dyn_storage)": {
+              "label": "mapping(uint256 => struct CrowdfundingPlatform.Milestone[])",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_mapping(t_address,t_struct(Contribution)4153_storage))": {
+              "label": "mapping(uint256 => mapping(address => struct CrowdfundingPlatform.Contribution))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Campaign)4146_storage)": {
+              "label": "mapping(uint256 => struct CrowdfundingPlatform.Campaign)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(RewardNFT)4184_storage)": {
+              "label": "mapping(uint256 => struct CrowdfundingPlatform.RewardNFT)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Campaign)4146_storage": {
+              "label": "struct CrowdfundingPlatform.Campaign",
+              "members": [
+                {
+                  "label": "creator",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "title",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "description",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "imageURI",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "goal",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "minContribution",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "maxContribution",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "deadline",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "amountRaised",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "8"
+                },
+                {
+                  "label": "contributorCount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "9"
+                },
+                {
+                  "label": "state",
+                  "type": "t_enum(CampaignState)4104",
+                  "offset": 0,
+                  "slot": "10"
+                },
+                {
+                  "label": "useWhitelist",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "10"
+                },
+                {
+                  "label": "merkleRoot",
+                  "type": "t_bytes32",
+                  "offset": 0,
+                  "slot": "11"
+                },
+                {
+                  "label": "rewardNFT",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "12"
+                },
+                {
+                  "label": "milestones",
+                  "type": "t_array(t_uint256)dyn_storage",
+                  "offset": 0,
+                  "slot": "13"
+                },
+                {
+                  "label": "currentMilestone",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "14"
+                },
+                {
+                  "label": "createdAt",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "15"
+                }
+              ],
+              "numberOfBytes": "512"
+            },
+            "t_struct(Contribution)4153_storage": {
+              "label": "struct CrowdfundingPlatform.Contribution",
+              "members": [
+                {
+                  "label": "amount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "timestamp",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "claimed",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_struct(Milestone)4162_storage": {
+              "label": "struct CrowdfundingPlatform.Milestone",
+              "members": [
+                {
+                  "label": "amount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "description",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "released",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "releasedAt",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_struct(RewardNFT)4184_storage": {
+              "label": "struct CrowdfundingPlatform.RewardNFT",
+              "members": [
+                {
+                  "label": "token",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "tokenIds",
+                  "type": "t_array(t_uint256)dyn_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "bronzeIds",
+                  "type": "t_mapping(t_address,t_uint256)",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "silverIds",
+                  "type": "t_mapping(t_address,t_uint256)",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "goldIds",
+                  "type": "t_mapping(t_address,t_uint256)",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "platinumId",
+                  "type": "t_mapping(t_address,t_uint256)",
+                  "offset": 0,
+                  "slot": "5"
+                }
+              ],
+              "numberOfBytes": "192"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.19"
+      }
+    }
+  ]
+}

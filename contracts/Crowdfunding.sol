@@ -10,8 +10,6 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 /// @title CrowdfundingPlatform - Advanced Crowdfunding with Milestones and NFT Rewards
 /// @notice A decentralized crowdfunding platform with milestone-based funding, NFT rewards, and DAO governance
 contract CrowdfundingPlatform is ReentrancyGuard, Ownable {
-    
-    // ============ State Variables ============
     uint256 public campaignCount;
     uint256 public platformFee = 25; // 2.5% fee
     address public feeRecipient;
@@ -130,7 +128,7 @@ contract CrowdfundingPlatform is ReentrancyGuard, Ownable {
     }
     
     // ============ Constructor ============
-    constructor() Ownable(msg.sender) {
+    constructor() Ownable() {
         feeRecipient = msg.sender;
     }
     
@@ -178,7 +176,7 @@ contract CrowdfundingPlatform is ReentrancyGuard, Ownable {
         campaign.merkleRoot = _merkleRoot;
         campaign.createdAt = block.timestamp;
         
-        creatorCampaigns[msg.sender].push(campaignId);
+        creatorCampaigns[msg.sender].push(campaignCount);
         
         emit CampaignCreated(campaignCount, msg.sender, _title, _goal, deadline);
         
